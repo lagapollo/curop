@@ -6,7 +6,7 @@
 //  Copyright © 2017 Matthew Jones. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum Expression: Int {
     case angry = 0
@@ -17,6 +17,27 @@ enum Expression: Int {
     case sad
     case surprised
     case neutral
+    
+    func image() -> UIImage {
+        switch self {
+        case .angry:
+            return UIImage(named: "angry")!
+        case .contemptuous:
+            return UIImage(named: "contemptuous")!
+        case .disgusted:
+            return UIImage(named: "disgusted")!
+        case .scared:
+            return UIImage(named: "scared")!
+        case .happy:
+            return UIImage(named: "happy")!
+        case .sad:
+            return UIImage(named: "sad")!
+        case .surprised:
+            return UIImage(named: "surprised")!
+        case .neutral:
+            return UIImage(named: "neutral")!
+        }
+    }
 }
 
 
