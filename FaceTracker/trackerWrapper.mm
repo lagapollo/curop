@@ -218,6 +218,59 @@ using namespace cv;
         }
     }
 }
+
+- (CGPoint) topLeftCorner {
+    // Obtain data from the face tracker model
+    cv::Mat shape = model._shape;
+    cv::Mat visi = model._clm._visi[model._clm.GetViewIdx()];
+    
+    
+    int i,n = shape.rows/2; cv::Point p1,referencePoint; cv::Scalar c;
+    
+    c = CV_RGB(255,0,0);
+    referencePoint = cv::Point(shape.at<double>(0,0),shape.at<double>(n,0));
+    for(i = 0; i < n; i++){
+        if(visi.at<int>(i,0) == 0)continue;
+        p1 = cv::Point(shape.at<double>(i,0),shape.at<double>(i+n,0));
+        
+        if (p1.x < referencePoint.x){
+            referencePoint.x = p1.x;
+        }
+        if (p1.y < referencePoint.y){
+            referencePoint.y = p1.y;
+        }
+    }
+    return CGPointMake(referencePoint.x, referencePoint.y);
+}
+
+- (CGPoint) centerPoint {
+    // Obtain data from the face tracker model
+    cv::Mat shape = model._shape;
+    cv::Mat visi = model._clm._visi[model._clm.GetViewIdx()];
+    
+    
+    int i,n = shape.rows/2; cv::Point p1,referencePoint; cv::Scalar c;
+    cv::Point rightBottomCorner;
+    c = CV_RGB(255,0,0);
+    referencePoint = cv::Point(shape.at<double>(0,0),shape.at<double>(n,0));
+    rightBottomCorner = referencePoint;
+    
+    for(i = 0; i < n; i++){
+        if(visi.at<int>(i,0) == 0)continue;
+        p1 = cv::Point(shape.at<double>(i,0),shape.at<double>(i+n,0));
+        if (p1.x < referencePoint.x && p1.y < referencePoint.y) {
+            referencePoint = p1;
+        }
+
+        if (p1.x > rightBottomCorner.x && p1.y > rightBottomCorner.y) {
+            rightBottomCorner = p1;
+        }
+    }
+    return CGPointMake((referencePoint.x + rightBottomCorner.x)/2,
+                       (referencePoint.y + rightBottomCorner.y)/2);
+}
+
+
 /*!
  @brief Runs face tracker and conditionally runs the emotion classification
  

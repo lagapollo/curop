@@ -63,5 +63,8 @@
  */
 -(UIImage *)trackWithCVImageBufferRef:(CVImageBufferRef)imageBuffer;
 
+- (CGPoint) topLeftCorner;
+
+- (CGPoint) centerPoint;
 
 @end

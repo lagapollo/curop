@@ -35,7 +35,10 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *showTrackingButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *toggleClassifyButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *faceButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *emoteButton;
 
+@property (weak, nonatomic) IBOutlet UIImageView *emoteImageview;
 
 - (IBAction)switchCamera:(id)sender;
 - (IBAction)faceTrack:(id)sender;
