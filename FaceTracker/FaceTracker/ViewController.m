@@ -208,10 +208,18 @@ AVCaptureDevicePosition pos = AVCaptureDevicePositionFront;
         // Show modified image on video view
         [self.videoView performSelectorOnMainThread:@selector(setImage:) withObject:trackedImage waitUntilDone:YES];
     }
-        
+    
 
 }
 
+- (IBAction)registerFace:(id)sender {
+    // register face
+    // add emoticone
+    
+}
 
+- (IBAction)addEmote:(id)sender {
+    [self.emoteImageview setImage:[UIImage imageNamed:@"emote"]];
+}
 
 @end
