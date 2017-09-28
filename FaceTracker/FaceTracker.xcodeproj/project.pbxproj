@@ -53,6 +53,7 @@
 		CAD11FF71B720CDD003ED990 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD11FF61B720CDD003ED990 /* ImageIO.framework */; };
 		CAD11FF91B720D32003ED990 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD11FF81B720D32003ED990 /* UIKit.framework */; };
 		CAD11FFE1B720FD4003ED990 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD11FFD1B720FD4003ED990 /* opencv2.framework */; };
+		F99282711F7CFB4000767202 /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99282701F7CFB4000767202 /* Face.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +122,8 @@
 		CAD11FF61B720CDD003ED990 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		CAD11FF81B720D32003ED990 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CAD11FFD1B720FD4003ED990 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		F992826F1F7CFB3F00767202 /* FaceTracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceTracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		F99282701F7CFB4000767202 /* Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +229,7 @@
 		CA8E2ACB1B70FDB900A1EC4F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F99282721F7CFB5200767202 /* Model */,
 				CA3CB50F1B7378230056E3C9 /* imageConversion.h */,
 				CA3CB5101B7378230056E3C9 /* imageConversion.mm */,
 				CAD120191B7231A7003ED990 /* Frameworks */,
@@ -247,6 +251,7 @@
 				CA3CB5151B739A8D0056E3C9 /* MainStoryboard_iPad.storyboard */,
 				CA8E2ADB1B70FDB900A1EC4F /* LaunchScreen.xib */,
 				CA8E2ACC1B70FDB900A1EC4F /* Supporting Files */,
+				F992826F1F7CFB3F00767202 /* FaceTracker-Bridging-Header.h */,
 			);
 			name = App;
 			path = FaceTracker;
@@ -293,6 +298,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		F99282721F7CFB5200767202 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F99282701F7CFB4000767202 /* Face.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -324,7 +337,8 @@
 				TargetAttributes = {
 					CA8E2AC81B70FDB900A1EC4F = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = JP99H4V8K4;
+						DevelopmentTeam = 6CY9L434R3;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -382,6 +396,7 @@
 				CA4B4CB91B9D8AD000A18023 /* svmWrapper.mm in Sources */,
 				CA3CB5381B78B3B50056E3C9 /* svm.cpp in Sources */,
 				CA3CB5391B78B3B50056E3C9 /* CLM.cc in Sources */,
+				F99282711F7CFB4000767202 /* Face.swift in Sources */,
 				CA4B4CBC1B9DCFDD00A18023 /* SettingsViewController.m in Sources */,
 				CA3CB53A1B78B3B50056E3C9 /* FCheck.cc in Sources */,
 				CA3CB53B1B78B3B50056E3C9 /* FDet.cc in Sources */,
@@ -501,9 +516,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JP99H4V8K4;
+				DEVELOPMENT_TEAM = 6CY9L434R3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTracker",
@@ -528,9 +544,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTrackerLibrary",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.genesis.FaceTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juhennet.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "FaceTracker/FaceTracker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s";
 			};
@@ -540,9 +559,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JP99H4V8K4;
+				DEVELOPMENT_TEAM = 6CY9L434R3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTracker",
@@ -567,9 +587,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTrackerLibrary",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.genesis.FaceTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juhennet.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "FaceTracker/FaceTracker-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
