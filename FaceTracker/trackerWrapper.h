@@ -66,5 +66,5 @@
 - (CGPoint) topLeftCorner;
 
 - (CGPoint) centerPoint;
-
+-(NSMutableArray*)predictions;
 @end

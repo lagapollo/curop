@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+#import "FaceTracker-Swift.h"
 @interface ViewController ()
 
 @end
