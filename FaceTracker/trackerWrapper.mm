@@ -158,7 +158,7 @@ using namespace cv;
 }
 -(NSMutableArray*)predictions {
     NSMutableArray *predictions = [@[] mutableCopy];
-    for (int i = 0; i < 8; i++){
+    for (int i = 0; i < 7; i++){
         double prediction = [[predictedValues objectAtIndex:i] doubleValue] * 100;
         [predictions addObject:[NSNumber numberWithDouble:prediction]];
     }

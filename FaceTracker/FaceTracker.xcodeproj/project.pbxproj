@@ -337,7 +337,7 @@
 				TargetAttributes = {
 					CA8E2AC81B70FDB900A1EC4F = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = JP99H4V8K4;
+						DevelopmentTeam = 6CY9L434R3;
 						LastSwiftMigration = 0900;
 					};
 				};
@@ -519,7 +519,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JP99H4V8K4;
+				DEVELOPMENT_TEAM = 6CY9L434R3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTracker",
@@ -544,7 +544,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTrackerLibrary",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.genesis.FaceTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juhennet.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FaceTracker/FaceTracker-Bridging-Header.h";
@@ -562,7 +562,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = JP99H4V8K4;
+				DEVELOPMENT_TEAM = 6CY9L434R3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTracker",
@@ -587,7 +587,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTrackerLibrary",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.genesis.FaceTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.juhennet.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FaceTracker/FaceTracker-Bridging-Header.h";

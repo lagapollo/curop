@@ -7,10 +7,12 @@
 //
 
 #import "ViewController.h"
-
 #import "FaceTracker-Swift.h"
+
 @interface ViewController ()
 
+    @property (strong, nonatomic) Face *face;
+    
 @end
 
 @implementation ViewController
@@ -212,15 +214,20 @@ AVCaptureDevicePosition pos = AVCaptureDevicePositionFront;
     
 
 }
+    
+- (void)createFace {
+    self.face = [[Face alloc] initWithValues: self.tracker.predictions];
+}
 
 - (IBAction)registerFace:(id)sender {
     // register face
     // add emoticone
-    
+    [self.tracker classify];
+    [self performSelector:@selector(createFace) withObject:nil afterDelay:3.0];
 }
 
 - (IBAction)addEmote:(id)sender {
-    [self.emoteImageview setImage:[UIImage imageNamed:@"emote"]];
+    [self.emoteImageview setImage:[self.face getImage: self.tracker.predictions]];
     
     CGPoint point = [self.tracker centerPoint];
     CGRect frame = [self.emoteImageview frame];

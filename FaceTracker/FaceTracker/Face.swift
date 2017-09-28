@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Expression: Int {
+@objc enum Expression: Int {
     case angry = 0
     case contemptuous
     case disgusted
@@ -38,10 +38,31 @@ enum Expression: Int {
             return UIImage(named: "neutral")!
         }
     }
+    
+    func description() -> String {
+        switch self {
+        case .angry:
+            return "angry"
+        case .contemptuous:
+            return "contemptuous"
+        case .disgusted:
+            return "disgusted"
+        case .scared:
+            return "scared"
+        case .happy:
+            return "happy"
+        case .sad:
+            return "sad"
+        case .surprised:
+            return "surprised"
+        case .neutral:
+            return "neutral"
+        }
+    }
 }
 
 
-class Face {
+@objc class Face: NSObject {
     
     static let minEcart: Double = 0.5
     var name: String?
@@ -54,8 +75,10 @@ class Face {
     func calculateExpression(_ values: [Double]) -> Expression {
         var index = 0
         var ecart = 0.0
+        print("=======================")
         for (i, val) in values.enumerated() {
             let newEcart = abs(baseValues[i] - val)
+            print("\(Expression(rawValue: i)!.description()) : \(newEcart)")
             if  newEcart > ecart {
                 index = i
                 ecart = newEcart
@@ -65,6 +88,11 @@ class Face {
             return Expression(rawValue: index)!
         }
         return Expression.neutral
+    }
+    
+    func getImage(_ values: [Double]) -> UIImage {
+        let expression = calculateExpression(values)
+        return expression.image()
     }
     
     
