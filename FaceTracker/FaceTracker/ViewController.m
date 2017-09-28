@@ -220,6 +220,11 @@ AVCaptureDevicePosition pos = AVCaptureDevicePositionFront;
 
 - (IBAction)addEmote:(id)sender {
     [self.emoteImageview setImage:[UIImage imageNamed:@"emote"]];
+    
+    CGPoint point = [self.tracker centerPoint];
+    CGRect frame = [self.emoteImageview frame];
+    frame.origin = point;
+    [self.emoteImageview setFrame:frame];
 }
 
 @end
