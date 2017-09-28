@@ -324,7 +324,7 @@
 				TargetAttributes = {
 					CA8E2AC81B70FDB900A1EC4F = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = P7HLW8563P;
+						DevelopmentTeam = JP99H4V8K4;
 					};
 				};
 			};
@@ -503,6 +503,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = JP99H4V8K4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTracker",
@@ -527,7 +528,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTrackerLibrary",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mrhysjones.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.genesis.FaceTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -541,6 +542,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = JP99H4V8K4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTracker",
@@ -565,7 +567,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceTrackerLibrary",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mrhysjones.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.genesis.FaceTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
